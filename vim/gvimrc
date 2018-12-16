@@ -7,3 +7,5 @@ set guifont=Ubuntu\ Mono\ 7       " Set font
 set guioptions-=r                 " Don't show right scrollbar
 set lines=999 columns=999         " Start vim maximized
 
+autocmd VimEnter * NERDTree       " Open NERDTree on startup
+autocmd VimEnter * wincmd p       " Set the cursor to the File

@@ -20,8 +20,13 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jdevlieghere/llvm.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'Conque-GDB'
 Plugin 'lervag/vimtex'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'jeaye/color_coded'
 
@@ -59,9 +64,26 @@ let g:ycm_key_list_previous_completion=[]
 "let g:cpp_concepts_highlight = 1
 "let g:cpp_experimental_template_highlight = 1
 let g:cpp_class_decl_highlight = 1
-let g:cpp_class_scope_highlight = 1
+"let g:cpp_class_scope_highlight = 1
+
+" Smart tab line
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'simple'
+let g:airline#extensions#tabline#enabled = 1
+
+" /////////////////// Snippet Settings \\\\\\\\\\\\\\\\\\\
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 silent! call pathogen#runtime_append_all_bundles()
+
+" Open NERDTree
+nmap <F6> :NERDTreeToggle<CR>
 
 " Splits
 set splitbelow                  " Horizontal split below
@@ -129,7 +151,7 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-colorscheme codedark
+colorscheme codedark 
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
